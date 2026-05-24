@@ -48,7 +48,7 @@ export function CapsuleCard({
       </div>
 
       <div className="flex flex-1 flex-col gap-2 p-4">
-        <p className="line-clamp-2 text-sm font-medium leading-snug text-slate-800">
+        <p className="line-clamp-2 text-left  text-sm font-medium text-slate-800">
           {capsule.description}
         </p>
         <div className="mt-auto flex items-center justify-between">
