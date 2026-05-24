@@ -8,6 +8,15 @@ export interface Capsule {
   isBookmarked: boolean;
 }
 
+export interface CapsuleComment {
+  id: number;
+  capsuleId: number;
+  author: string;
+  content: string;
+  createdAt: string;
+  avatarColor: string;
+}
+
 export interface User {
   id: number;
   username: string;

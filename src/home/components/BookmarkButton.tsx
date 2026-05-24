@@ -13,7 +13,7 @@ export function BookmarkButton({ active, onClick }: Readonly<BookmarkButtonProps
         event.stopPropagation();
         onClick();
       }}
-      className={`group flex h-8 w-8 items-center justify-center rounded-full transition-all duration-200 ${
+      className={`cursor-pointer group flex h-8 w-8 items-center justify-center rounded-full transition-all duration-200 ${
         active ? "text-amber-500" : "text-slate-400 hover:text-amber-400"
       }`}
       aria-label="Sauvegarder"

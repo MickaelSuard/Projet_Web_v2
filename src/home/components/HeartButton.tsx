@@ -13,7 +13,7 @@ export function HeartButton({ active, onClick }: Readonly<HeartButtonProps>) {
         event.stopPropagation();
         onClick();
       }}
-      className={`group relative flex h-8 w-8 items-center justify-center rounded-full transition-all duration-200 ${
+      className={`cursor-pointer group relative flex h-8 w-8 items-center justify-center rounded-full transition-all duration-200 ${
         active ? "text-rose-500" : "text-slate-400 hover:text-rose-400"
       }`}
       aria-label="Aimer"

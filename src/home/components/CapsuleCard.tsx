@@ -6,12 +6,14 @@ interface CapsuleCardProps {
   capsule: Capsule;
   onToggleLike: (id: number) => void;
   onToggleBookmark: (id: number) => void;
+  onOpen: (capsule: Capsule) => void;
 }
 
 export function CapsuleCard({
   capsule,
   onToggleLike,
   onToggleBookmark,
+  onOpen,
 }: Readonly<CapsuleCardProps>) {
   const date = new Date(capsule.createdAt).toLocaleDateString("fr-FR", {
     day: "numeric",
@@ -20,9 +22,12 @@ export function CapsuleCard({
   });
 
   return (
-    <a
-      href={`/capsules/${capsule.id}`}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+    <button
+      onClick={() => onOpen(capsule)}
+      className="group relative flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") onOpen(capsule);
+      }}
     >
       <div className="relative aspect-video overflow-hidden bg-slate-100">
         <img
@@ -53,6 +58,6 @@ export function CapsuleCard({
           <span className="text-xs text-slate-400">{date}</span>
         </div>
       </div>
-    </a>
+    </button>
   );
 }
