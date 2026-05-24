@@ -1,7 +1,7 @@
 import { ChevronDown, LogOut, Search, Shield } from "lucide-react";
 import { useState } from "react";
 import type { User } from "../types";
-import { DropdownLink } from "./DropdownLink";
+import { launchDucklings } from "../utils/duckEasterEgg";
 
 interface NavbarProps {
   user: User;
@@ -27,7 +27,11 @@ export function Navbar({ user, searchQuery, onSearchChange }: Readonly<NavbarPro
           </button>
           {menuOpen && (
             <div className="animate-in fade-in slide-in-from-top-2 absolute right-0 z-50 mt-2 w-52 rounded-xl border border-slate-200 bg-white py-1 shadow-lg">
-              {user.role === "admin" && <DropdownLink href="/admin" icon={<Shield className="h-4 w-4" />}>Panneau Admin</DropdownLink>}
+              {user.role === "admin" && (
+                <button onClick={() => { launchDucklings(); setMenuOpen(false); }} className="flex w-full items-center gap-2 px-4 py-2 text-left text-sm text-slate-700 transition-colors hover:bg-slate-50" type="button">
+                  <span className="flex h-4 w-4 items-center justify-center"><Shield className="h-4 w-4" /></span>Panneau Admin
+                </button>
+              )}
               <div className="my-1 border-t border-slate-100" />
               <a href="/" className="flex items-center gap-2 px-4 py-2 text-sm text-rose-600 transition-colors hover:bg-rose-50"><LogOut className="h-4 w-4" /> Déconnexion</a>
             </div>
