@@ -82,7 +82,7 @@ export function CapsuleDetails({ capsule, comments, currentUser, onClose, onTogg
             <p className="text-sm leading-relaxed text-slate-800">{capsule.description}</p>
           </div>
           <div className="px-5 py-4">
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-slate-400">{comments.length} commentaire{comments.length !== 1 ? "s" : ""}</h3>
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-slate-400">{comments.length} commentaire{comments.length > 1 ? "s" : ""}</h3>
             {comments.length === 0 ? (
               <div className="py-8 text-center text-slate-400">
                 <MessageCircle className="mx-auto mb-2 h-8 w-8 opacity-40" strokeWidth={1.5} />

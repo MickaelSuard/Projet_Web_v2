@@ -13,7 +13,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Readonly<P
       </button>
       <div className="flex gap-1">
         {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
-          <button key={page} onClick={() => onPageChange(page)} className={`h-9 w-9 rounded-lg text-sm font-medium transition-all ${page === currentPage ? "bg-indigo-600 text-white shadow-sm" : "text-slate-600 hover:bg-slate-100"}`} type="button">
+          <button key={page} onClick={() => onPageChange(page)} className={`cursor-pointer h-9 w-9 rounded-lg text-sm font-medium transition-all ${page === currentPage ? "bg-indigo-600 text-white shadow-sm" : "text-slate-600 hover:bg-slate-100"}`} type="button">
             {page}
           </button>
         ))}
